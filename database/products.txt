@@ -1,0 +1,18 @@
+PRODUCT TABLE
+
+CREATE TABLE products (
+product_id VARCHAR(20) PRIMARY KEY,
+product_name VARCHAR(50) NOT NULL,
+product_quantity INT NOT NULL,
+product_sold INT DEFAULT 0,
+product_price DECIMAL (10, 2) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP);
+
+INSERT INTO products (product_id, product_name, product_quantity, product_sold, product_price) VALUES
+('PET001', 'Petronas', 5, 15, 25),
+('MIR002', 'Mira', 10, 4, 24.20),
+('PET003', 'Petron', 6, 10, 24),
+('PET004', 'Petros', 16, 20, 21),
+('BHP005', 'BHP Petrol', 8, 7, 26.50),
+('SOL006', 'Solar Gas', 7, 3, 25);

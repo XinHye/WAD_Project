@@ -1,0 +1,9 @@
+CREATE TABLE orders (
+    order_id VARCHAR(36) PRIMARY KEY,
+    order_date DATETIME NOT NULL,
+    member_id INT NOT NULL,
+    total_amount DECIMAL(10, 2) NOT NULL,
+    pick_up ENUM('online', 'retail') NOT NULL DEFAULT 'online',
+    schedule_type ENUM('express', 'schedule') NOT NULL DEFAULT 'express',
+    FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE
+);

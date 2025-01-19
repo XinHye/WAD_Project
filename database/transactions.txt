@@ -1,0 +1,10 @@
+CREATE TABLE transactions (
+    transaction_id VARCHAR(36) PRIMARY KEY,
+    transaction_date DATETIME NOT NULL,
+    transaction_amount DECIMAL(10, 2) NOT NULL,
+    member_id INT NOT NULL,
+    order_id VARCHAR(36) NOT NULL,
+    transaction_type ENUM('card', 'fpx') NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders (order_id),
+    FOREIGN KEY (member_id) REFERENCES members(member_id) ON DELETE CASCADE
+);

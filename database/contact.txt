@@ -1,0 +1,9 @@
+CREATE TABLE contact_us (
+    member_id INT NOT NULL PRIMARY KEY,          
+    member_fname VARCHAR(255) NOT NULL,           
+    member_lname VARCHAR(255) NOT NULL,            
+    member_email VARCHAR(255) NOT NULL,                
+    member_contactno VARCHAR(20) NOT NULL,                 
+    subject TEXT NOT NULL,                      
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+);
